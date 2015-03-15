@@ -1,7 +1,13 @@
 # Yumee-web
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Yumee-web is a client for the Yumee restaurant booking service.
+Yumee runs on Firebase and this client is built in Ember.js using 
+EmberFire. There are also native 
+[iOS](https://github.com/Marula/yumee-ios) and 
+[Android](https://github.com/Marula/yumee-android) clients. The live 
+version of the web client lives 
+[here](https://github.com/Marula/yumee-web). The rest of the readme
+applies specifically to the web client.
 
 ## Prerequisites
 
@@ -25,9 +31,6 @@ You will need the following things properly installed on your computer.
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
 
 ### Running Tests
 
@@ -41,7 +44,8 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+Hosted on the Fastly CDN via Firebase hosting. Instructions coming
+soon.
 
 ## Further Reading / Useful Links
 
