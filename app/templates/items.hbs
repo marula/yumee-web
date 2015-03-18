@@ -1,0 +1,7 @@
+<div class="new-itm-link">{{#link-to 'items.new'}}Add a new item{{/link-to}}</div>
+
+{{outlet}}
+
+{{#each item in model}}
+    <div class="each-itm">{{item.name}}: {{item.price}}</div>
+{{/each}}
