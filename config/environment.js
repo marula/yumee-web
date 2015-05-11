@@ -4,7 +4,16 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'yumee-web',
     environment: environment,
-    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' https://*.firebaseio.com",
+      'font-src': "'self' http://fonts.gstatic.com",
+      'frame-src': "'self' https://*.firebaseio.com",
+      'connect-src': "'self' wss://*.firebaseio.com",
+      'img-src': "'self'",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'media-src': "'self'"
+    },
     firebase: 'https://yumee.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',

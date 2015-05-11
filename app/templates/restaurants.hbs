@@ -1,26 +1,7 @@
- <div class="container restaurant-list">
-  <div>
-    {{#link-to 'restaurants.new' class="btn btn-primary btn-lg " activeClass=""}}Add a new restaurant{{/link-to}}
-  </div>
+<div class="breadcrumbs">
+  {{bread-crumbs}}
+</div>
 
+<div class="container-fluid">
   {{outlet}}
-
-  <table class="table table-striped table-hover ">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Restaurant Name</th>
-        <th>Email Address</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each model as |restaurant index|}}
-        <tr>
-          <td>{{index}}</td>
-          <td>{{restaurant.name}}</td>
-          <td>{{restaurant.email}}</td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
 </div>

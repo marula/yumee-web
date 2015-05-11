@@ -1,0 +1,23 @@
+<ul class="breadcrumb">
+  {{#each crumb in breadCrumbs}}
+    <li {{bind-attr class="crumb.isCurrent:active:"}}>
+      {{#if crumb.isCurrent}}
+        {{crumb.label}}
+      {{else}}
+        {{#if crumb.linkable}}
+          {{#if crumb.model}}{{! to avoid null/undefined model in link-to }}
+            {{#link-to crumb.path crumb.model}}
+              {{crumb.label}}
+            {{/link-to}}
+          {{else}}
+            {{#link-to crumb.path}}
+              {{crumb.label}}
+            {{/link-to}}
+          {{/if}}
+        {{else}}
+          {{crumb.label}}
+        {{/if}}
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>

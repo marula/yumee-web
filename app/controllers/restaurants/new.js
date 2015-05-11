@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  breadCrumb: 'New',
   actions: {
     addRestaurant: function() {
       var newRestaurant = this.store.createRecord('restaurant', {
@@ -12,6 +13,7 @@ export default Ember.Controller.extend({
         name: '',
         email: ''
       });
+      this.transitionToRoute('restaurants');
     }
   }
 });
