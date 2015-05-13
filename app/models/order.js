@@ -8,7 +8,7 @@ export default DS.Model.extend({
   total: DS.attr('number'),
   restaurant: DS.belongsTo('restaurant', { async: true }),
   table: DS.belongsTo('table', { async: true }),
-  //user: DS.belongsTo('user', { async: true }),
+  user: DS.belongsTo('user', { async: true }),
   items: DS.hasMany('item', { async: true }),
   payments: DS.hasMany('payment', { async: true })
 });
