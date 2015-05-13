@@ -1,0 +1,31 @@
+<h1>Sales</h1>
+{{#nf-graph width=500 
+			height=300 
+			paddingRight=10 
+			paddingTop=10
+			showLanes=true
+    		showFrets=true}}
+  {{#nf-graph-content}}
+   
+    {{nf-line data=model.salesData
+		trackingMode="snap-last"
+		trackedData=tracked}}
+
+	{{nf-horizontal-line y=tracked.y}}
+	{{nf-vertical-line x=tracked.x}}
+
+  {{/nf-graph-content}}
+
+    
+  {{#nf-y-axis as |tick|}}
+    <text>{{tick.value}}</text>
+  {{/nf-y-axis}}
+
+
+  {{#nf-x-axis as |tick|}}
+    <text>{{tick.value}}</text>
+  {{/nf-x-axis}}
+
+  
+{{/nf-graph}}
+<text>Sales on {{model.tracked.x}} is {{model.tracked.y}}</text>
