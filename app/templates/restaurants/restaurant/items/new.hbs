@@ -1,6 +1,21 @@
-<div class="new-itm-form">
-  {{input type="text" placeholder="Name" value=name class="name-input"}}
-  {{input type="text" placeholder="Price" value=price class="price-input"}}
-  <button {{action 'addItem'}} class="submit">Submit</button>
-  <strong>ID: {{controllers.restaurants/restaurant.content.name}}</strong>
+<div class="container">
+  <div class="new-form">
+    <form class="form-horizontal well">
+      <fieldset>
+        <legend>Adding new item</legend>
+        <div class="form-group">
+          <div class="col-xs-12 col-sm-4">
+            {{input type="text" placeholder="Name" value=name class="name-input"}}
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            {{input type="text" placeholder="Price" value=price class="price-input"}}
+          </div>          
+          <div class="col-xs-12 col-sm-4">
+            {{#link-to 'restaurants.restaurant' class="btn btn-default" activeClass=""}}Cancel{{/link-to}}
+            <button {{action 'addItem'}} class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
 </div>

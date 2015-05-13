@@ -1,6 +1,24 @@
-<div class="new-itm-form">
-  {{input type="text" placeholder="Number" value=number class="name-input"}}
-  {{input type="text" placeholder="Details" value=details class="price-input"}}
-  {{input type="text" placeholder="Orders" value=orders class="price-input"}}
-  <button {{action 'addTable'}} class="submit">Submit</button>
+<div class="container">
+  <div class="new-form">
+    <form class="form-horizontal well">
+      <fieldset>
+        <legend>Adding new table</legend>
+        <div class="form-group">
+          <div class="col-xs-12 col-sm-4">
+            {{input type="text" placeholder="Number" value=number class="name-input"}}
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            {{input type="text" placeholder="Details" value=details class="price-input"}}
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            {{input type="text" placeholder="Orders" value=orders class="price-input"}}
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            {{#link-to 'restaurants.restaurant' class="btn btn-default" activeClass=""}}Cancel{{/link-to}}
+            <button {{action 'addTable'}} class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
 </div>
