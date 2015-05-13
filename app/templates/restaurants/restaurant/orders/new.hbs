@@ -1,0 +1,5 @@
+<div class="new-order-form">
+  {{input type="text" placeholder="Note" value=name class="name-input"}}
+  <button {{action 'placeOrder'}} class="submit">Place Order</button>
+  <strong>Name: {{controllers.restaurants/restaurant.content.name}}</strong>
+</div>
