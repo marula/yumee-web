@@ -1,3 +1,5 @@
+import Ember from 'ember';
+
 export default Ember.Route.extend({
   model: function(params) {
     return data[0];/*this.store.fetch('restauraunt', params.restaurant_id);*/

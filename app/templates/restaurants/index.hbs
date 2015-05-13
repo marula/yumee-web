@@ -16,6 +16,7 @@
         <td>{{index}}</td>
         <td>{{#link-to 'restaurants.restaurant' restaurant}}{{restaurant.name}}{{/link-to}}</td>
         <td>{{restaurant.email}}</td>
+        <td>{{#link-to 'restaurants.restaurant.edit' restaurant class="btn btn-primary btn-lg " activeClass=""}}Edit restaurant{{/link-to}}</td>
       </tr>
     {{/each}}
   </tbody>

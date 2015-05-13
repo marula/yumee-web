@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="new-form">
+    <form class="form-horizontal well">
+      <fieldset>
+        <legend>Editing table</legend>
+        <div class="form-group">
+          <div class="col-xs-12 col-sm-4">
+            {{input type="text" placeholder="Number" value=model.number class="name-input"}}
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            {{input type="text" placeholder="Details" value=model.details class="name-input"}}
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            {{#link-to 'restaurants.restaurant' class="btn btn-default" activeClass=""}}Cancel{{/link-to}}
+            <button {{action 'editTable'}} class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

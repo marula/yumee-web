@@ -19,6 +19,7 @@
         <td>{{item.name}}</td>
         <td>{{item.price}}</td>
         <td>{{item.restaurant.name}}</td>
+        <td>{{#link-to 'restaurants.restaurant.items.item.edit' item class="btn btn-primary btn-lg " activeClass=""}}Edit item{{/link-to}}</td>
       </tr>
     {{/each}}
   </tbody>
@@ -44,6 +45,7 @@
         <td>{{table.details}}</td>
         <td>0</td>
         <td>{{table.restaurant.name}}</td>
+        <td>{{#link-to 'restaurants.restaurant.tables.table.edit' table class="btn btn-primary btn-lg " activeClass=""}}Edit table{{/link-to}}</td>
       </tr>
     {{/each}}
   </tbody>
