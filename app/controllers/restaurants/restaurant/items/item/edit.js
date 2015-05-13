@@ -8,6 +8,12 @@ export default Ember.Controller.extend({
       this.get('model').save();
      
       this.transitionToRoute('restaurants.restaurant');
+    }, 
+    deleteItem: function() {
+    	var item = this.get('model');
+	    item.deleteRecord();
+	    item.save();
+	    this.transitionToRoute('restaurants.restaurant');
     }
   }
 });

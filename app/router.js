@@ -33,7 +33,6 @@ export default Router.map(function() {
       this.route('orders', function() {
         this.route('new');
         this.route('order', { path: '/:order_id' }, function() {
-          this.route('edit');
 
           this.route('payments', function() {
             this.route('new');
