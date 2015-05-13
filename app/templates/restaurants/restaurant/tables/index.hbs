@@ -1,0 +1,24 @@
+<span>
+  {{#link-to 'restaurants.restaurant.tables.new' class="btn btn-primary btn-lg " activeClass=""}}Add a new table{{/link-to}}
+</span>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Details</th>
+      <th>Orders</th>
+      <th>Restaurant</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |table index|}}
+      <tr>
+        <td>{{table.number}}</td>
+        <td>{{table.details}}</td>
+        <td>1</td>
+        <td>{{table.restaurant.name}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

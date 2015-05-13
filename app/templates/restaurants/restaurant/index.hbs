@@ -24,3 +24,32 @@
     {{/each}}
   </tbody>
 </table>
+
+<span>
+  {{#link-to 'restaurants.restaurant.tables.new' class="btn btn-primary btn-lg " activeClass=""}}Add a new table{{/link-to}}
+</span>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Details</th>
+      <th>Orders</th>
+      <th>Restaurant</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model.tables as |table index|}}
+      <tr>
+        <td>{{table.number}}</td>
+        <td>{{table.details}}</td>
+        <td>0</td>
+        <td>{{table.restaurant.name}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<span>
+  {{#link-to 'restaurants.restaurant.data' class="btn btn-primary btn-lg " activeClass=""}}View Data{{/link-to}}
+</span>
