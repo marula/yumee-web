@@ -17,6 +17,8 @@ export default Ember.Controller.extend({
         var newItem = this.store.createRecord('item', {
           name: this.get('name'),
           price: this.get('price'),
+          description: this.get('description'),
+          item_picture: this.get('item_picture'),
           restaurant: restaurant
         });
 
@@ -29,7 +31,9 @@ export default Ember.Controller.extend({
 
         this.setProperties({
           name: '',
-          price: ''
+          price: '',
+          description: '',
+          item_picture: ''
         });
         this.transitionToRoute('restaurants.restaurant');
       }.bind(this));

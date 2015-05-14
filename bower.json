@@ -18,7 +18,8 @@
     "d3": "~3.5.3",
     "rx-ember": "~0.2.5",
     "rxjs": "2.5.2",
-    "ember-uploader": "~0.3.6"
+    "ember-uploader": "~0.3.6",
+    "ember-cli-moment-shim": "~0.1.0"
   },
   "resolutions": {
     "ember": "1.11.1",
