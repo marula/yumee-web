@@ -17,7 +17,8 @@
     "bootswatch": "^3.3.1",
     "d3": "~3.5.3",
     "rx-ember": "~0.2.5",
-    "rxjs": "2.5.2"
+    "rxjs": "2.5.2",
+    "ember-uploader": "~0.3.6"
   },
   "resolutions": {
     "ember": "1.11.1",

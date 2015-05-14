@@ -11,21 +11,21 @@ export default Router.map(function() {
   this.route('restaurants', function() {
     this.route('new');
 
-    this.route('restaurant', { path: '/:restaurant_id' }, function() {
+    this.route('restaurant', { path: '/:restaurant_id/' }, function() {
       this.route('edit');
 
       this.route('items', function() {
         this.route('new');
         this.route('item', { path: '/:item_id' }, function() {
           this.route('edit');
-        }); 
+        });
       });
 
       this.route('tables', function() {
         this.route('new');
         this.route('table', { path: '/:table_id' }, function() {
-          this.route('edit');  
-        }); 
+          this.route('edit');
+        });
 
         this.route('orders');
       });
@@ -40,7 +40,7 @@ export default Router.map(function() {
           });
         });
       });
-      
+
       this.route('data', function() {
         this.route('sales');
         this.route('stock');
@@ -58,7 +58,7 @@ export default Router.map(function() {
         this.route('order', { path: '/:order_id' }, function() {
           this.route('payments', function() {
             this.route('new');
-            
+
             this.route('payment', { path: '/:payment_id' });
           });
         });

@@ -1,13 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function(params) {
+  model: function() {
     return data[0];/*this.store.fetch('restauraunt', params.restaurant_id);*/
   }
 });
 
 var data = [{
-      
+
   restaurant_id :'Simply Asia',
 
   salesData: [
@@ -31,7 +31,7 @@ var data = [{
     { x: 2, y: 130 },
     { x: 3, y: 300 }
   ]
-      
+
   }, {
 
   restaurant_id: 1,

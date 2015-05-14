@@ -4,6 +4,8 @@ export default DS.Model.extend({
   name: DS.attr('string'),
   email: DS.attr('string'),
   address: DS.attr('string'),
+  lat: DS.attr('number'),
+  lng: DS.attr('number'),
   description: DS.attr('string'),
   phone_number: DS.attr('string'),
   website: DS.attr('string'),
