@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <div class="page-header">
+        <h1>Place Order at {{model.restaurant.name}}</h1>
+      </div>
+      <div class="list-group order-list">
+        {{#each model.orderItems as |orderItem|}}
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">{{orderItem.item.name}}</h4>
+            <p class="list-group-item-text">{{orderItem.item.description}}</p>
+          </div>
+        {{/each}}
+      </div>
+      <p class="lead">{{model.note}}</p>
+    </div>
+  </div>
+</div>

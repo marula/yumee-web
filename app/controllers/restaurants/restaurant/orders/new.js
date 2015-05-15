@@ -1,35 +1,26 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  needs: ['restaurants/restaurant'],
+  needs: ['application'],
+  currentOrder: Ember.computed.alias('controllers.application.currentOrder'),
   breadCrumb: 'Place Order',
+
   actions: {
-    placeOrder: function() {
-      var id = this.get('controllers.restaurants/restaurant.content.id');
+    confirmOrder: function() {
+      var restaurant = this.get('model');
+      var order = this.get('currentOrder');
 
-      Ember.RSVP.hash({
-        restaurant: this.store.find('restaurant', id)
-      })
-      .then(function(promises) {
-        var restaurant = promises.restaurant;
-
-        var newOrder= this.store.createRecord('order', {
-          note: this.get('note'),
-          restaurant: restaurant
+      order.save().then(function() {
+        restaurant.get('orders').then(function(orders) {
+          orders.addObject(order);
+          restaurant.save();
         });
+      });
 
-        newOrder.save().then(function() {
-          restaurant.get('orders').then(function(orders) {
-            orders.addObject(newOrder);
-            restaurant.save();
-          });
-        });
-
-        this.setProperties({
-          note: ''
-        });
-        this.transitionToRoute('restaurants.restaurant.orders');
-      }.bind(this));
+      this.setProperties({
+        note: ''
+      });
+      this.transitionToRoute('restaurants.restaurant.orders.order', order);
     }
   }
 });

@@ -12,12 +12,13 @@
     </tr>
   </thead>
   <tbody>
-    {{#each model as |table index|}}
+    {{#each model.tables as |table index|}}
       <tr>
         <td>{{table.number}}</td>
         <td>{{table.details}}</td>
-        <td>1</td>
+        <td>0</td>
         <td>{{table.restaurant.name}}</td>
+        <td>{{#link-to 'restaurants.restaurant.tables.table.edit' table class="btn btn-primary btn-lg " activeClass=""}}Edit table{{/link-to}}</td>
       </tr>
     {{/each}}
   </tbody>
