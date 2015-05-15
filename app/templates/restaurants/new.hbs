@@ -1,22 +1,75 @@
 <div class="container">
-  <div class="new-form">
-    <form class="form-horizontal well">
-      <fieldset>
-        <legend>Adding new restaurant</legend>
-        <div class="form-group">
-          <div class="col-xs-12 col-sm-4">
-            {{input type="text" placeholder="Name" value=name class="name-input"}}
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            {{input type="text" placeholder="Email" value=email class="email-input"}}
-          </div>
-          {{file-upload url="/"}}
-          <div class="col-xs-12 col-sm-4">
-            {{#link-to 'restaurants' class="btn btn-default" activeClass=""}}Cancel{{/link-to}}
-            <button {{action 'addRestaurant'}} class="btn btn-primary">Submit</button>
-          </div>
-        </div>
-      </fieldset>
-    </form>
-  </div>
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <div class="page-header">
+        <h1>Add a new restaurant: {{name}}</h1>
+      </div>
+      <div class="new-form">
+        <form class="form-horizontal well">
+          <fieldset>
+            <div class="form-group">
+              <label for="inputName" class="col-xs-2 control-label">Name</label>
+              <div class="col-xs-10">
+                {{input type="text" placeholder="Name" value=name class="form-control"}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail" class="col-xs-2 control-label">Email</label>
+              <div class="col-xs-10">
+                {{input type="text" placeholder="Email" value=email class="form-control"}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress" class="col-xs-2 control-label">Address</label>
+              <div class="col-xs-10">
+                {{input type="text" placeholder="Address" value=address class="form-control"}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputLat" class="col-xs-2 control-label">Latitude</label>
+              <div class="col-xs-10">
+                {{input type="number" placeholder="Latitude of coordinate" value=lat class="form-control"}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputLng" class="col-xs-2 control-label">Longitude</label>
+              <div class="col-xs-10">
+                {{input type="number" placeholder="Longitude of coordinate" value=lng class="form-control"}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputDescription" class="col-xs-2 control-label">Description</label>
+              <div class="col-xs-10">
+                {{input type="text" placeholder="Description" value=description class="form-control"}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPhoneNumber" class="col-xs-2 control-label">Phone Number</label>
+              <div class="col-xs-10">
+                {{input type="text" placeholder="Phone Number" value=phone_number class="form-control"}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputWebsite" class="col-xs-2 control-label">Website</label>
+              <div class="col-xs-10">
+                {{input type="url" placeholder="Website" value=website class="form-control"}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputProfilePicture" class="col-xs-2 control-label">Profile Picture URL</label>
+              <div class="col-xs-10">
+                {{input type="url" placeholder="URL to image" value=profile_picture class="form-control"}}
+              </div>
+            </div>
+            <div class="form-group text-center">
+              <div class="col-sm-4 col-sm-offset-4">
+                {{#link-to 'restaurants' class="btn btn-default" activeClass=""}}Cancel{{/link-to}}
+                <button {{action 'addRestaurant'}} class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div> 
 </div>

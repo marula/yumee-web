@@ -17,7 +17,6 @@ export default Ember.Controller.extend({
         var newTable = this.store.createRecord('table', {
           number: this.get('number'),
           details: this.get('details'),
-          /*orders: this.get('orders'),*/
           restaurant: restaurant
         });
 
@@ -30,8 +29,7 @@ export default Ember.Controller.extend({
 
         this.setProperties({
           number: '',
-          details: '',
-          orders: ''
+          details: '',          
         });
         this.transitionToRoute('restaurants.restaurant');
       }.bind(this));

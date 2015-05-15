@@ -1,22 +1,46 @@
 <div class="container">
-  <div class="new-form">
-    <form class="form-horizontal well">
-      <fieldset>
-        <legend>Editing table</legend>
-        <div class="form-group">
-          <div class="col-xs-12 col-sm-4">
-            {{input type="text" placeholder="Number" value=model.number class="name-input"}}
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            {{input type="text" placeholder="Details" value=model.details class="name-input"}}
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            {{#link-to 'restaurants.restaurant' class="btn btn-default" activeClass=""}}Cancel{{/link-to}}
-            <button {{action 'editTable'}} class="btn btn-primary">Submit</button>
-            <button {{action 'deleteTable'}} class="btn btn-primary">Delete</button>
-          </div>
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <div class="page-header">
+        <h1>Edit table {{model.number}}</h1>
+      </div>
+      <div class="new-form">
+        <form class="form-horizontal well">
+          <fieldset>
+            <div class="form-group">
+              <label for="inputName" class="col-xs-2 control-label">Number</label>
+              <div class="col-xs-10">
+                {{input type="text" placeholder="Number" value=model.number class="form-control"}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail" class="col-xs-2 control-label">Details</label>
+              <div class="col-xs-10">
+                {{input type="text" placeholder="Details" value=model.details class="form-control"}}
+              </div>
+            </div>         
+            <div class="form-group text-center">
+              <div class="col-sm-4 col-sm-offset-4">
+                {{#link-to 'restaurants.restaurant' class="btn btn-default" activeClass=""}}Cancel{{/link-to}}
+                <button {{action 'editTable'}} class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+      <div class="panel panel-danger text-center">
+        <div class="panel-heading">
+          <h3 class="panel-title">The danger zone {{fa-icon "warning"}}</h3>
         </div>
-      </fieldset>
-    </form>
+        <div class="panel-body">
+          Completely and <strong>irreversably</strong> remove table from the data store.
+          <button {{action 'deleteTable'}} class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

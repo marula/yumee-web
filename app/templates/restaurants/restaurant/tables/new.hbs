@@ -1,24 +1,33 @@
 <div class="container">
-  <div class="new-form">
-    <form class="form-horizontal well">
-      <fieldset>
-        <legend>Adding new table</legend>
-        <div class="form-group">
-          <div class="col-xs-12 col-sm-4">
-            {{input type="text" placeholder="Number" value=number class="name-input"}}
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            {{input type="text" placeholder="Details" value=details class="price-input"}}
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            {{input type="text" placeholder="Orders" value=orders class="price-input"}}
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            {{#link-to 'restaurants.restaurant' class="btn btn-default" activeClass=""}}Cancel{{/link-to}}
-            <button {{action 'addTable'}} class="btn btn-primary">Submit</button>
-          </div>
-        </div>
-      </fieldset>
-    </form>
-  </div>
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <div class="page-header">
+        <h1>Add new table: Number {{number}}</h1>
+      </div>
+      <div class="new-form">
+        <form class="form-horizontal well">
+          <fieldset>
+            <div class="form-group">
+              <label for="inputName" class="col-xs-2 control-label">Number</label>
+              <div class="col-xs-10">
+                {{input type="text" placeholder="Number" value=number class="form-control"}}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail" class="col-xs-2 control-label">Details</label>
+              <div class="col-xs-10">
+                {{input type="text" placeholder="Details" value=details class="form-control"}}
+              </div>
+            </div>         
+            <div class="form-group text-center">
+              <div class="col-sm-4 col-sm-offset-4">
+                {{#link-to 'restaurants.restaurant' class="btn btn-default" activeClass=""}}Cancel{{/link-to}}
+                <button {{action 'addTable'}} class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>  
 </div>

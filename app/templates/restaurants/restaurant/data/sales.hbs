@@ -1,7 +1,7 @@
 <h1>Sales</h1>
-{{#nf-graph width=500 
+{{#nf-graph width=600 
 			height=300 
-			paddingRight=10 
+			paddingRight=40 
 			paddingTop=10
 			showLanes=true
     		showFrets=true}}
@@ -23,9 +23,9 @@
 
 
   {{#nf-x-axis as |tick|}}
-    <text>{{tick.value}}</text>
+    <text>{{moment tick.value "MMMM" "M"}}</text>
   {{/nf-x-axis}}
 
   
 {{/nf-graph}}
-<text>Sales on {{tracked.x}} is {{tracked.y}}</text>
+<text>Sales on {{moment tracked.x "MMMM" "M"}} is {{tracked.y}}</text>
