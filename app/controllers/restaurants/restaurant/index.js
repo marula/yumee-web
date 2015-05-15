@@ -6,7 +6,6 @@ export default Ember.Controller.extend({
 
   startCurrentOrder: function() {
     var restaurant = this.get('model');
-    console.log(restaurant.id);
     var newOrder= this.store.createRecord('order', {
       placed: false,
       paid: false,
@@ -14,14 +13,6 @@ export default Ember.Controller.extend({
       restaurant: restaurant
     });
 
-    /*
-    newOrder.save().then(function() {
-      restaurant.get('orders').then(function(orders) {
-        orders.addObject(newOrder);
-        restaurant.save();
-      });
-    });
-    */
 
     this.set('currentOrder', newOrder);
     return newOrder;
@@ -45,9 +36,10 @@ export default Ember.Controller.extend({
     addItem: function(item) {
       var currentOrder = this.get('currentOrder');
       if (!currentOrder) {
-        currentOrder = this.startCurrentOrder();
+          currentOrder = this.startCurrentOrder();
       }
       this.addOrderItem(currentOrder, item);
+      /*
       currentOrder.get('orderItems').then(function(orderItems) {
         var filtered = orderItems.filter(function(orderItem) {
           console.log('Test schtuff: ' + orderItem.get('item').get('id') + ', ' + item.id);
@@ -55,7 +47,7 @@ export default Ember.Controller.extend({
         });
         console.log(filtered.length);
         console.log(orderItems.length);
-      });
+      });*/
     }
   }
 });
