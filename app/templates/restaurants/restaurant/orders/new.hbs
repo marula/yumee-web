@@ -6,8 +6,9 @@
       </div>
       <div class="list-group order-list">
         {{#each currentOrder.orderItems as |orderItem|}}
-          <div class="list-group-item">
+          <div class="list-group-item min-height">
             <h4 class="list-group-item-heading">{{orderItem.item.name}}</h4>
+            <button {{action 'deleteItemFromOrder' orderItem }} class="btn btn-danger delete-order-item">Delete</button>
             <p class="list-group-item-text">{{orderItem.item.description}}</p>
           </div>
         {{/each}}

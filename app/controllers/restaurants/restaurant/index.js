@@ -19,7 +19,6 @@ export default Ember.Controller.extend({
   },
   addOrderItem: function(order, item) {
     var newOrderItem = this.store.createRecord('orderItem', {
-      count: 1,
       order: order,
       item: item
     });

@@ -21,6 +21,24 @@ export default Ember.Controller.extend({
         note: ''
       });
       this.transitionToRoute('restaurants.restaurant.orders.order', order);
+    }, 
+    deleteItemFromOrder: function(orderItem) {
+      var restaurant = this.get('model');
+      var controller = this;
+      
+      orderItem.deleteRecord();
+      orderItem.save();
+
+      var currentOrder = this.get('currentOrder');/*this.get('currentOrder');*/
+            
+      currentOrder.get('orderItems').then(function(orderItems) {        
+        if (orderItems.length === 0) {          
+          controller.set('controllers.application.currentOrder', null);          
+          controller.transitionToRoute('restaurants.restaurant', restaurant);          
+        }
+      });
+
+                  
     }
   }
 });
