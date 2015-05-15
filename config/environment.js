@@ -6,12 +6,12 @@ module.exports = function(environment) {
     environment: environment,
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' https://*.firebaseio.com",
-      'font-src': "'self' http://fonts.gstatic.com",
+      'script-src': "'self' 'unsafe-eval' https://*.firebaseio.com https://*.googleapis.com https://maps.gstatic.com",
+      'font-src': "'self' http://fonts.gstatic.com https://fonts.gstatic.com",
       'frame-src': "'self' https://*.firebaseio.com",
       'connect-src': "'self' wss://*.firebaseio.com",
       'img-src': "*",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com https://fonts.googleapis.com",
       'media-src': "'self'"
     },
     firebase: 'https://yumee.firebaseio.com/',

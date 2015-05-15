@@ -25,7 +25,7 @@
       <div class="well">
         <h2>{{selectedRestaurant.name}}</h2>
         <p class="lead">{{selectedRestaurant.description}}</p>
-        <img src="{{selectedRestaurant.profile_picture}}" class="item-picture" />
+        {{google-map latitude=selectedRestaurant.lat longitude=selectedRestaurant.lng markers=markers}}
         <div class="text-center">
           {{#link-to 'restaurants.restaurant.edit' selectedRestaurant class="btn btn-warning btn-lg"}}Edit Restaurant{{/link-to}}
           {{#link-to 'restaurants.restaurant' selectedRestaurant class="btn btn-info btn-lg"}}View Menu{{/link-to}}
