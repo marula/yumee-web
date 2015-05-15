@@ -10,7 +10,7 @@ module.exports = function(environment) {
       'font-src': "'self' http://fonts.gstatic.com",
       'frame-src': "'self' https://*.firebaseio.com",
       'connect-src': "'self' wss://*.firebaseio.com",
-      'img-src': "'self'",
+      'img-src': "*",
       'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
       'media-src': "'self'"
     },

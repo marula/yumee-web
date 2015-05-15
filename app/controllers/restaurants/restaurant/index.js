@@ -33,6 +33,9 @@ export default Ember.Controller.extend({
   },
 
   actions: {
+    selectItem: function(item) {
+      this.set('selectedItem', item);
+    },
     addItem: function(item) {
       var currentOrder = this.get('currentOrder');
       if (!currentOrder) {
