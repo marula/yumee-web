@@ -1,57 +1,48 @@
-<h1>{{model.name}}</h1>
-<span>
-  {{#link-to 'restaurants.restaurant.items.new' class="btn btn-primary btn-lg " activeClass=""}}Add a new menu item{{/link-to}}
-  {{#link-to 'restaurants.restaurant.orders' class="btn btn-primary btn-lg " activeClass=""}}View orders{{/link-to}}
-</span>
+<div class="container">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-sm-8">
+        <h1>{{model.name}}</h1>
+        <p>{{model.description}}</p>
+        <p>
+          {{#link-to 'restaurants.restaurant.edit' model class="btn btn-primary btn-lg"}}Edit restaurant details{{/link-to}}
+          {{#link-to 'restaurants.restaurant.items.new' class="btn btn-primary btn-lg"}}Add a new menu item{{/link-to}}
+          {{#link-to 'restaurants.restaurant.orders' class="btn btn-primary btn-lg"}}View orders{{/link-to}}
+          {{#link-to 'restaurants.restaurant.tables' class="btn btn-primary btn-lg"}}View tables{{/link-to}}
+          {{#link-to 'restaurants.restaurant.data' class="btn btn-primary btn-lg"}}View Data{{/link-to}}
+        </p>
+      </div>
+      <div class="col-sm-4 hidden-xs">
+        <img src="{{model.profile_picture}}" class="cover-pic" />
+      </div>
+    </div>
+  </div>
 
-<table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Restaurant</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each model.items as |item index|}}
-      <tr>
-        <td>{{index}}</td>
-        <td>{{item.name}}</td>
-        <td>{{item.price}}</td>
-        <td>{{item.restaurant.name}}</td>
-        <td>{{#link-to 'restaurants.restaurant.items.item.edit' item class="btn btn-primary btn-lg " activeClass=""}}Edit item{{/link-to}}</td>
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
-
-<span>
-  {{#link-to 'restaurants.restaurant.tables.new' class="btn btn-primary btn-lg " activeClass=""}}Add a new table{{/link-to}}
-</span>
-
-<table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Number</th>
-      <th>Details</th>
-      <th>Orders</th>
-      <th>Restaurant</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each model.tables as |table index|}}
-      <tr>
-        <td>{{table.number}}</td>
-        <td>{{table.details}}</td>
-        <td>0</td>
-        <td>{{table.restaurant.name}}</td>
-        <td>{{#link-to 'restaurants.restaurant.tables.table.edit' table class="btn btn-primary btn-lg " activeClass=""}}Edit table{{/link-to}}</td>
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
-
-<span>
-  {{#link-to 'restaurants.restaurant.data' class="btn btn-primary btn-lg " activeClass=""}}View Data{{/link-to}}
-</span>
+  <div class="page-header">
+    <h2>
+      {{model.name}} Menu
+      {{#if currentOrder}}
+        {{#link-to 'restaurants.restaurant.orders.new' class="btn btn-success btn-lg header-button"}}Place Order{{/link-to}}
+      {{else}}
+        {{#link-to 'restaurants.restaurant.orders.new' class="btn btn-success btn-lg header-button disabled"}}Place Order{{/link-to}}
+      {{/if}}
+    </h2>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="list-group order-list">
+        {{#each model.items as |item|}}
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">{{item.name}}</h4>
+            <p class="list-group-item-text">{{item.description}}</p>
+            <strong class="list-group-item-text">R{{item.price}}</strong>
+            <div class="item-buttons">
+              {{#link-to 'restaurants.restaurant.items.item.edit' item class="btn btn-primary btn-lg"}}Edit item{{/link-to}}
+              <button {{action 'addItem' item}} class="btn btn-primary btn-lg">Add to order</button>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

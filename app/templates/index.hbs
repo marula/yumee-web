@@ -1,7 +1,30 @@
-<div class="container-fluid">
+<div class="container">
   <div class="jumbotron">
-    <h1>Find good food, quickly.</h1>
-    <p>At Yumee we aim to help you find the best food near you and make paying for it a breeze.</p>
-    <p>{{#link-to 'restaurants' class="btn btn-primary btn-lg"}}I'm Hungry{{/link-to}}</p>
+    <div class="row">
+      <div class="col-sm-8">
+        <h1>Find good food, quickly.</h1>
+        <p>At Yumee we aim to help you find the best food near you and make paying for it a breeze.</p>
+        <p>{{#link-to 'restaurants' class="btn btn-primary btn-lg"}}I'm Hungry{{/link-to}}</p>
+      </div>
+      <div class="col-sm-4 hidden-xs">
+        <img src="assets/images/food.png" class="home-cover-pic"/>
+      </div>
+    </div>
+  </div>
+  <div class="page-header">
+    <h1>Really Yumee Restaurants!</h1>
+  </div>
+  <div class="row">
+    {{#each model as |restaurant|}}
+      <div class="col-sm-4">
+        <div class="panel panel-info">
+          <div class="panel-heading">{{restaurant.name}}</div>
+          <div class="panel-body">
+            <p>{{restaurant.description}}</p>
+            <p>{{#link-to 'restaurants.restaurant' restaurant class="btn btn-default"}}View Menu{{/link-to}}</p>
+          </div>
+        </div>
+      </div>
+    {{/each}}
   </div>
 </div>
