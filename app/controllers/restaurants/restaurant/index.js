@@ -31,6 +31,38 @@ export default Ember.Controller.extend({
     });
   },
 
+ /* orderItemsCount: function(){
+    var currentOrder = this.get('currentOrder');
+
+    if (currentOrder) {
+      currentOrder.get('orderItems').then(function(orderItems) {
+        console.log(orderItems.length);
+        return orderItems.length;
+      });
+    } else {
+      return 0;
+    }
+  }.property('currentOrder.orderItems'),
+
+  addedItemsCount: function() {
+    var currentOrder = this.get('currentOrder');
+    var item = this.get('selectedItem');
+    
+    if (currentOrder) {
+     
+        var orderItems = currentOrder.get('orderItems'); 
+        
+        var filtered = orderItems.filter(function(orderItem) {
+          return orderItem.get('item').get('id') == item.id;
+        });        
+        
+        return filtered.length;      
+      
+    } else {
+      return 0;
+    }
+  }.property('selectedItem', 'currentOrder.orderItems'),*/
+
   actions: {
     selectItem: function(item) {
       this.set('selectedItem', item);
@@ -41,8 +73,8 @@ export default Ember.Controller.extend({
           currentOrder = this.startCurrentOrder();
       }
       this.addOrderItem(currentOrder, item);
-      /*
-      currentOrder.get('orderItems').then(function(orderItems) {
+      
+      /*currentOrder.get('orderItems').then(function(orderItems) {
         var filtered = orderItems.filter(function(orderItem) {
           console.log('Test schtuff: ' + orderItem.get('item').get('id') + ', ' + item.id);
           return orderItem.get('item').get('id') == item.id;
