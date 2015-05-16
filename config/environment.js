@@ -14,7 +14,7 @@ module.exports = function(environment) {
       'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com https://fonts.googleapis.com",
       'media-src': "'self'"
     },
-    firebase: 'https://yumee.firebaseio.com/',
+    firebase: 'https://xolani.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
