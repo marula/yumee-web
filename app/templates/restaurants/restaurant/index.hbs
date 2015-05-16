@@ -5,11 +5,13 @@
         <h1>{{model.name}}</h1>
         <p>{{model.description}}</p>
         <p>
+		{{#if session.isAuthenticated}}
           {{#link-to 'restaurants.restaurant.edit' model class="btn btn-primary btn-lg"}}Edit restaurant details{{/link-to}}
           {{#link-to 'restaurants.restaurant.items.new' class="btn btn-primary btn-lg"}}Add a new menu item{{/link-to}}
           {{#link-to 'restaurants.restaurant.orders' class="btn btn-primary btn-lg"}}View orders{{/link-to}}
           {{#link-to 'restaurants.restaurant.tables' class="btn btn-primary btn-lg"}}View tables{{/link-to}}
           {{#link-to 'restaurants.restaurant.data' class="btn btn-primary btn-lg"}}View Data{{/link-to}}
+		{{/if}}
         </p>
       </div>
       <div class="col-sm-4 hidden-xs">
@@ -49,7 +51,9 @@
         <p class="lead">{{selectedItem.description}}</p>
         <img src="{{selectedItem.item_picture}}" class="item-picture" />
         <div class="text-center">
+			{{#if session.isAuthenticated}}
           {{#link-to 'restaurants.restaurant.items.item.edit' selectedItem class="btn btn-warning btn-lg"}}Edit item{{/link-to}}
+		{{/if}}
           <button {{action 'addItem' selectedItem}} class="btn btn-info btn-lg">Add to order</button>
         </div>
       </div>

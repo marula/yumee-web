@@ -4,7 +4,9 @@
         <div class="page-header">
           <h1>
             Great places to eat!
+			{{#if session.isAuthenticated}}
             {{#link-to 'restaurants.new' class="btn btn-primary btn-lg header-button"}}Add a new restaurant{{/link-to}}
+			{{/if}}
           </h1>
         </div>
       </div>
@@ -34,7 +36,9 @@
         <p class="lead">{{selectedRestaurant.description}}</p>
         {{google-map latitude=selectedRestaurant.lat longitude=selectedRestaurant.lng markers=markers}}
         <div class="text-center">
+		{{#if session.isAuthenticated}}
           {{#link-to 'restaurants.restaurant.edit' selectedRestaurant class="btn btn-warning btn-lg"}}Edit Restaurant{{/link-to}}
+		{{/if}}
           {{#link-to 'restaurants.restaurant' selectedRestaurant class="btn btn-info btn-lg"}}View Menu{{/link-to}}
         </div>
       </div>

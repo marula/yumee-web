@@ -20,6 +20,13 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+		  <li>
+			{{#if session.isAuthenticated}}
+			  <a {{action "signOut" "google"}}>Sign out</a>
+			{{else}}
+			  <a {{action "signIn" "google"}}>Sign in with google</a>
+			{{/if}}	
+		  </li>
           <li>{{#link-to 'about'}}About{{/link-to}}</li>
         </ul>
       </div>

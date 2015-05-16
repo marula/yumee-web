@@ -8,5 +8,6 @@ export default DS.Model.extend({
   other_details: DS.attr('string'),
   profile_picture: DS.attr('string'),
   payments: DS.hasMany('payment', { async: true}),
-  orders: DS.hasMany('order', { async: true})
+  orders: DS.hasMany('order', { async: true}),
+  handle: DS.attr()
 });
