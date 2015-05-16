@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <div class="page-header">
+        <h1>Place Order at {{model.restaurant.name}}</h1>
+      </div>
+      <div class="list-group order-list">
+        {{#each model.orderItems as |orderItem|}}
+          <div class="list-group-item">
+            <div class="row">
+              <div class="col-lg-10">
+                <h4 class="list-group-item-heading">{{orderItem.item.name}}</h4>
+                <p class="list-group-item-text">{{orderItem.item.description}}</p>
+              </div>
+              <div class="col-lg-2">
+                <p class="item-price-bigger"><b>{{orderItem.item.price}}</b></p>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+      {{input type="text" placeholder="Payment sum" value=payment class="form-control"}}
+      <div class="col-sm-4 col-sm-offset-4 confirm-order">
+          {{#link-to 'restaurants.restaurant' model class="btn btn-default"}}Cancel{{/link-to}}
+          <button {{action 'payOrder' model.orderItems}} class="btn btn-primary">Pay</button>
+        </div>      
+    </div>
+  </div>
+</div>
