@@ -43,7 +43,7 @@ export default Router.map(function() {
 
       this.route('data', function() {
         this.route('sales');
-        this.route('stock');
+        this.route('customers');
       });
     });
   });

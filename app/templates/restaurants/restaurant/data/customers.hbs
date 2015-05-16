@@ -1,4 +1,4 @@
-<h1>Sales</h1>
+<h1>Daily Customers</h1>
 {{#nf-graph width=600 
 			height=300 
 			paddingRight=40 
@@ -7,7 +7,7 @@
     		showFrets=true}}
   {{#nf-graph-content}}
    
-    {{nf-area data=model.salesData
+    {{nf-line data=model.DailyCustomers
 		trackingMode="snap-last"
 		trackedData=tracked}}
 
@@ -23,9 +23,9 @@
 
 
   {{#nf-x-axis as |tick|}}
-    <text>{{moment tick.value "MMMM" "M"}}</text>
+    <text>{{tick.value}}</text>
   {{/nf-x-axis}}
 
   
 {{/nf-graph}}
-<Strong>Sales on {{moment tracked.x "MMMM" "M"}} is {{tracked.y}}</strong>
+<strong>Daily Customers on {{tracked.x}} is {{tracked.y}}</strong>

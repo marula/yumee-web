@@ -18,12 +18,7 @@
             </div>
           </div>
         {{/each}}
-      </div>
-      {{input type="text" placeholder="Payment sum" value=payment class="form-control"}}
-      <div class="col-sm-4 col-sm-offset-4 confirm-order">
-          {{#link-to 'restaurants.restaurant' model class="btn btn-default"}}Cancel{{/link-to}}
-          <button {{action 'payOrder' model.orderItems}} class="btn btn-primary">Pay</button>
-        </div>      
+      </div>           
     </div>
   </div>
 </div>
